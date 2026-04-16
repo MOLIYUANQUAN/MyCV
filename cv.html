@@ -3,523 +3,231 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>贾泽澎 (Zeep Jia) — CV</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700&display=swap" rel="stylesheet" />
+  <title>贾泽澎 (Zeep Jia) — 简历</title>
   <style>
-    :root {
-      --ink: #0c0f14;
-      --ink-soft: #3d4451;
-      --paper: #faf9f7;
-      --panel: #0f1419;
-      --panel-2: #161d26;
-      --gold: #c9a45c;
-      --gold-dim: rgba(201, 164, 92, 0.35);
-      --line: rgba(255, 255, 255, 0.1);
-      --main-line: #e6e4df;
-      --radius: 2px;
-    }
-
+    /* 单列 Word/PDF 风；在仍倾向一页的前提下略放宽行距与段距 */
     * { box-sizing: border-box; }
-    html { -webkit-font-smoothing: antialiased; }
+    html {
+      font-size: 10.25pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
     body {
       margin: 0;
-      min-height: 100vh;
-      background: linear-gradient(145deg, #e8e6e1 0%, #d8d4cc 50%, #eceae6 100%);
-      font-family: "Inter", "PingFang SC", "Microsoft YaHei", sans-serif;
-      font-size: 13px;
-      color: var(--ink);
-      line-height: 1.45;
+      padding: 0;
+      color: #000;
+      background: #fff;
+      font-family: Calibri, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.38;
     }
-
-    .stage {
-      min-height: 100vh;
-      padding: clamp(1rem, 3vw, 2.5rem);
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+    .doc {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 12mm 15mm 14mm;
     }
-
-    .cv {
-      width: 100%;
-      max-width: 210mm;
-      min-height: 297mm;
-      background: var(--paper);
-      box-shadow:
-        0 25px 50px -12px rgba(15, 20, 25, 0.35),
-        0 0 0 1px rgba(0, 0, 0, 0.04);
-      display: grid;
-      grid-template-columns: minmax(168px, 31%) 1fr;
-      overflow: hidden;
-      border-radius: var(--radius);
-    }
-
-    /* —— 侧栏 —— */
-    .sidebar {
-      background: linear-gradient(165deg, var(--panel) 0%, #121a22 42%, var(--panel-2) 100%);
-      color: #f0ede6;
-      padding: clamp(1.1rem, 2.8vw, 1.65rem) clamp(1rem, 2.2vw, 1.35rem);
-      position: relative;
-    }
-    .sidebar::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 0 0;
-      background: radial-gradient(ellipse 120% 80% at 0% 0%, rgba(201, 164, 92, 0.12) 0%, transparent 55%);
-      pointer-events: none;
-    }
-    .sidebar > * { position: relative; z-index: 1; }
-
-    .mark {
-      width: 36px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
-      margin-bottom: 0.85rem;
-      border-radius: 2px;
-    }
-
-    .name-cn {
-      font-family: "Noto Serif SC", "Songti SC", serif;
+    header { margin-bottom: 0.55rem; }
+    h1 {
+      margin: 0 0 0.2rem;
+      font-size: 15pt;
       font-weight: 700;
-      font-size: clamp(1.35rem, 3.2vw, 1.65rem);
-      letter-spacing: 0.06em;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+    .contact {
       margin: 0;
-      line-height: 1.15;
-      color: #fff;
+      font-size: 9.25pt;
+      line-height: 1.42;
+      word-break: break-all;
     }
-    .name-en {
-      margin: 0.35rem 0 0;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.55);
-    }
-    .role-chip {
-      margin-top: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.55rem;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid var(--gold-dim);
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: var(--radius);
-    }
-    .role-chip svg { opacity: 0.9; }
+    .contact a { color: #000; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
 
-    .contacts {
-      margin-top: 1.25rem;
-      padding-top: 1.1rem;
-      border-top: 1px solid var(--line);
-    }
-    .contact-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.55rem;
-      margin-bottom: 0.65rem;
-      font-size: 0.72rem;
-      line-height: 1.4;
-      color: rgba(255, 255, 255, 0.82);
-      word-break: break-word;
-    }
-    .contact-row:last-child { margin-bottom: 0; }
-    .contact-row svg {
-      flex-shrink: 0;
-      margin-top: 0.12rem;
-      opacity: 0.55;
-      color: var(--gold);
-    }
-    .contact-row a {
-      color: #fff;
-      text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      transition: border-color 0.15s ease, color 0.15s ease;
-    }
-    .contact-row a:hover {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-    }
-
-    .side-heading {
-      margin: 1.35rem 0 0.55rem;
-      font-size: 0.62rem;
+    h2 {
+      margin: 0.55rem 0 0.28rem;
+      padding: 0 0 0.12rem;
+      font-size: 10pt;
       font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
+      border-bottom: 1px solid #000;
+      line-height: 1.25;
     }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-    .tag {
-      padding: 0.22rem 0.45rem;
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.88);
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
-    }
-    .tag--accent {
-      color: var(--panel);
-      background: var(--gold);
-      border-color: transparent;
-      font-weight: 600;
-    }
-    .side-skill-group { margin-bottom: 0.75rem; }
-    .side-skill-group:last-of-type { margin-bottom: 0; }
-    .side-skill-label {
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.5);
-      margin-bottom: 0.35rem;
-    }
-    .side-skill-line {
-      font-size: 0.68rem;
-      line-height: 1.45;
-      color: rgba(255, 255, 255, 0.78);
-    }
-
-    .side-foot {
-      margin-top: auto;
-      padding-top: 1.25rem;
-      font-size: 0.62rem;
-      color: rgba(255, 255, 255, 0.35);
-      letter-spacing: 0.08em;
-    }
-    .sidebar { display: flex; flex-direction: column; }
-
-    /* —— 主栏 —— */
-    .main {
-      padding: clamp(1.1rem, 2.5vw, 1.55rem) clamp(1.15rem, 2.8vw, 1.75rem);
-      background: var(--paper);
-    }
-
-    .section-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin: 0 0 0.45rem;
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .section-label::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--main-line), transparent);
-    }
-    .section-label span { color: var(--ink-soft); font-weight: 600; }
+    h2:first-of-type { margin-top: 0.35rem; }
 
     .lead {
-      margin: 0 0 0.85rem;
-      font-size: 0.8rem;
-      line-height: 1.55;
-      color: var(--ink-soft);
+      margin: 0 0 0.2rem;
+      font-size: 10.25pt;
+      text-align: justify;
+      text-justify: inter-ideograph;
+      line-height: 1.4;
+    }
+    .lead strong { font-weight: 700; }
+
+    .job {
+      margin: 0.48rem 0 0;
+    }
+    .job-head {
+      margin: 0 0 0.12rem;
+      font-size: 10.25pt;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .job-sub {
+      margin: 0 0 0.22rem;
+      font-size: 9.75pt;
+      font-weight: 400;
+      line-height: 1.36;
+    }
+    .job-sub .when { float: right; font-weight: 400; }
+    .job::after { content: ""; display: table; clear: both; }
+
+    ul {
+      margin: 0 0 0.12rem;
+      padding-left: 1.15rem;
+    }
+    li {
+      margin-bottom: 0.24rem;
+      font-size: 10.25pt;
+      line-height: 1.4;
       text-align: justify;
       text-justify: inter-ideograph;
     }
-    .lead strong {
-      color: var(--ink);
-      font-weight: 600;
-    }
+    li strong { font-weight: 700; }
+    em { font-style: italic; font-family: Calibri, "Segoe UI", sans-serif; }
 
-    .exp {
-      margin-bottom: 0.72rem;
-      padding-left: 0.75rem;
-      border-left: 2px solid var(--gold-dim);
+    .edu-title {
+      margin: 0.12rem 0 0.08rem;
+      font-size: 10.25pt;
+      font-weight: 700;
+      line-height: 1.3;
     }
-    .exp:last-of-type { margin-bottom: 0.5rem; }
-
-    .exp-head {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 0.25rem 0.75rem;
-      margin-bottom: 0.3rem;
-    }
-    .exp-title {
-      font-family: "Noto Serif SC", serif;
-      font-weight: 600;
-      font-size: 0.86rem;
-      color: var(--ink);
-      letter-spacing: 0.02em;
-    }
-    .exp-period {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      color: var(--gold);
-      white-space: nowrap;
-    }
-    .exp-role {
-      font-size: 0.68rem;
-      color: var(--ink-soft);
-      margin-bottom: 0.35rem;
-    }
-    .exp p {
-      margin: 0;
-      font-size: 0.78rem;
-      line-height: 1.52;
-      color: var(--ink-soft);
-    }
-    .exp p strong { color: var(--ink); font-weight: 600; }
-    .exp em {
-      font-style: normal;
-      font-family: Inter, sans-serif;
-      font-size: 0.74rem;
-      color: var(--ink);
-      letter-spacing: 0.02em;
-    }
-    .exp-list {
-      margin: 0.1rem 0 0;
-      padding-left: 0.95rem;
-      font-size: 0.76rem;
-      line-height: 1.5;
-      color: var(--ink-soft);
-    }
-    .exp-list li { margin-bottom: 0.32rem; }
-    .exp-list li:last-child { margin-bottom: 0; }
-    .exp-list strong { color: var(--ink); font-weight: 600; }
-
-    .edu-block {
-      margin-top: 0.15rem;
-    }
-    .edu-head {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 0.35rem;
-      margin-bottom: 0.35rem;
-    }
-    .edu-school {
-      font-family: "Noto Serif SC", serif;
-      font-weight: 600;
-      font-size: 0.88rem;
-      color: var(--ink);
-    }
-    .edu-meta {
-      font-size: 0.68rem;
-      color: var(--ink-soft);
+    .edu-line {
+      margin: 0 0 0.18rem;
+      font-size: 10.25pt;
+      line-height: 1.38;
     }
     .edu-block p {
-      margin: 0 0 0.3rem;
-      font-size: 0.78rem;
-      line-height: 1.5;
-      color: var(--ink-soft);
+      margin: 0 0 0.18rem;
+      font-size: 10.25pt;
+      line-height: 1.4;
+      text-align: justify;
+      text-justify: inter-ideograph;
     }
-    .edu-block p strong { color: var(--ink); }
+    .edu-block p strong { font-weight: 700; }
 
-    .spacer { height: 0.65rem; }
+    .skills p {
+      margin: 0 0 0.16rem;
+      font-size: 10.25pt;
+      line-height: 1.4;
+    }
+    .skills strong { font-weight: 700; }
 
     .screen-hint {
-      margin-top: 1rem;
-      padding: 0.5rem 0.65rem;
-      font-size: 0.65rem;
-      color: var(--ink-soft);
-      background: rgba(0, 0, 0, 0.03);
-      border-radius: var(--radius);
-      border: 1px dashed var(--main-line);
+      margin-top: 0.45rem;
+      padding-top: 0.35rem;
+      border-top: 1px solid #ccc;
+      font-size: 8.25pt;
+      color: #555;
     }
     .screen-hint kbd {
       font-family: inherit;
-      font-size: 0.62rem;
-      padding: 0.1rem 0.35rem;
-      border: 1px solid var(--main-line);
-      border-radius: 3px;
-      background: #fff;
+      font-size: 8pt;
+      padding: 0 0.2rem;
+      border: 1px solid #ccc;
+      border-radius: 2px;
     }
 
-    @media (max-width: 640px) {
-      .cv {
-        grid-template-columns: 1fr;
-        max-width: 100%;
+    @media screen {
+      body { background: #e8e8e8; }
+      .doc {
+        background: #fff;
+        margin: 12px auto;
+        box-shadow: 0 0 0 1px #ccc;
       }
-      .sidebar { padding-bottom: 1.25rem; }
-      .name-cn { font-size: 1.5rem; }
     }
 
     @media print {
-      html { font-size: 10px; }
-      body {
-        background: #fff;
-        print-color-adjust: exact;
-        -webkit-print-color-adjust: exact;
-      }
-      .stage { padding: 0; display: block; }
-      .cv {
+      html { font-size: 10pt; }
+      body { background: #fff; line-height: 1.38; }
+      .doc {
         max-width: none;
-        min-height: auto;
+        margin: 0;
+        padding: 0;
         box-shadow: none;
-        border-radius: 0;
-        page-break-after: avoid;
       }
-      .main { padding: 9mm 11mm 8mm 12mm; }
-      .sidebar { padding: 9mm 9mm 8mm 10mm; }
-      .lead { font-size: 8.8pt; line-height: 1.48; }
-      .exp-list { font-size: 8.3pt; }
-      .exp-list li { margin-bottom: 0.22rem; }
-      .exp { margin-bottom: 0.55rem; }
-      .edu-block p { font-size: 8.3pt; }
-      .screen-hint { display: none !important; }
-      a { color: inherit !important; border-bottom: none !important; }
-      .contact-row a { text-decoration: none; }
+      h1 { font-size: 14.5pt; }
+      h2 { margin-top: 0.5rem; margin-bottom: 0.22rem; }
+      .job { margin-top: 0.4rem; }
+      li { margin-bottom: 0.2rem; line-height: 1.4; }
+      .screen-hint { display: none; }
+      .contact a { text-decoration: none; }
     }
 
-    @page {
-      size: A4;
-      margin: 8mm;
-    }
+    @page { size: A4; margin: 10mm 12mm; }
   </style>
 </head>
 <body>
-  <div class="stage">
-    <article class="cv">
-      <aside class="sidebar">
-        <div class="mark" aria-hidden="true"></div>
-        <h1 class="name-cn">贾泽澎</h1>
-        <p class="name-en">Zeep Jia</p>
-        <div class="role-chip" title="定位">
-          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-          </svg>
-          Product · CS
-        </div>
+  <article class="doc">
+    <header>
+      <h1>贾泽澎 (Zeep Jia)</h1>
+      <p class="contact">
+        电话：15899892439 &nbsp;|&nbsp; 邮箱：<a href="mailto:15899892439@163.com">15899892439@163.com</a>
+        &nbsp;|&nbsp; GitHub：<a href="https://github.com/MOLIYUANQUAN">github.com/MOLIYUANQUAN</a>
+        &nbsp;|&nbsp; 所在地：深圳 / 曼彻斯特
+      </p>
+    </header>
 
-        <div class="contacts">
-          <div class="contact-row">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <span><a href="tel:15899892439">15899892439</a></span>
-          </div>
-          <div class="contact-row">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span><a href="mailto:15899892439@163.com">15899892439@163.com</a></span>
-          </div>
-          <div class="contact-row">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            <span><a href="https://github.com/MOLIYUANQUAN">github.com/MOLIYUANQUAN</a></span>
-          </div>
-          <div class="contact-row">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>深圳 · 曼彻斯特</span>
-          </div>
-        </div>
+    <h2>核心定位 (Executive Summary)</h2>
+    <p class="lead">
+      曼彻斯特大学计算机科学系大二在读，具备硬核技术背景与极强商业敏锐度的产品经理。拥有从 0 到 1 的产品闭环经验，擅长敏捷开发与跨职能团队管理。能独立完成从需求洞察、产品原型设计 (MVP)、PRD 撰写到推进落地的完整产品生命周期。拥有带领 <strong>10 人</strong>团队在极短周期内实现产品上线并获取<strong>数千 MAU</strong>的实战经历。善于将复杂商业痛点转化为清晰的产品架构，致力于通过数据驱动验证商业模式并实现增长。
+    </p>
 
-        <h2 class="side-heading">技术与产品工具</h2>
-        <div class="side-skill-group">
-          <div class="side-skill-label">产品与数据</div>
-          <div class="tags">
-            <span class="tag tag--accent">PRD</span>
-            <span class="tag">竞品分析</span>
-            <span class="tag">敏捷项目</span>
-            <span class="tag">Prompt Eng.</span>
-          </div>
-        </div>
-        <div class="side-skill-group">
-          <div class="side-skill-label">前端与客户端</div>
-          <div class="tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">微信小程序</span>
-          </div>
-        </div>
-        <div class="side-skill-group">
-          <div class="side-skill-label">后端与数据库</div>
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Java</span>
-            <span class="tag">SQL</span>
-          </div>
-        </div>
+    <h2>产品与项目经历 (Product &amp; Project Experience)</h2>
 
-        <p class="side-foot">CURRICULUM VITAE · 2026</p>
-      </aside>
+    <section class="job">
+      <p class="job-head">海外留子圈（校园 C2C 与社交平台）</p>
+      <p class="job-sub">创始人 &amp; 产品经理 <span class="when">2025.09 — 至今</span></p>
+      <ul>
+        <li><strong>需求洞察与产品规划：</strong>深度调研留学生群体，精准定位二手交易与校友社交的痛点需求。确立「极简、克制」的核心体验原则，规划产品 Roadmap，历时三个月完成微信小程序 MVP 版本的原型设计与上线。</li>
+        <li><strong>敏捷项目与团队管理：</strong>搭建并带领 10 余人的跨职能团队（覆盖研发、设计、运营）。作为项目枢纽，负责拆解业务需求，统筹前端与后端开发进度，保障产品高质量按时交付。</li>
+        <li><strong>产品架构与合规设计：</strong>主导搭建包含内容合规审查与风控管理的产品底层机制，确保 UGC 社区的健康运转。</li>
+        <li><strong>冷启动与用户增长：</strong>制定并执行早期冷启动推广运营策略，成功跑通产品核心业务流程，实现从 0 到 1 的破局，目前累计斩获数千 MAU（月活跃用户）。</li>
+      </ul>
+    </section>
 
-      <div class="main">
-        <h2 class="section-label">核心定位 <span>Executive</span></h2>
-        <p class="lead">
-          曼彻斯特大学计算机科学系大二在读，具备硬核技术背景与极强商业敏锐度的产品经理。拥有从 0 到 1 的产品闭环经验，擅长敏捷开发与跨职能团队管理。能独立完成从需求洞察、产品原型设计 (MVP)、PRD 撰写到推进落地的完整产品生命周期。拥有带领 <strong>10 人</strong>团队在极短周期内实现产品上线并获取<strong>数千 MAU</strong>的实战经历。善于将复杂商业痛点转化为清晰的产品架构，致力于通过数据驱动验证商业模式并实现增长。
-        </p>
+    <section class="job">
+      <p class="job-head">ReproShip（AI Agent Hackathon 项目）</p>
+      <p class="job-sub">产品负责人 <span class="when">2026.03</span></p>
+      <ul>
+        <li><strong>痛点分析与愿景定义：</strong>针对 AI 研究者在复现代码时陷入「环境依赖地狱」的核心痛点，提出 <em>Stop configuring. Start building</em> 的产品愿景，明确目标用户画像。</li>
+        <li><strong>极速交付与可用性验证：</strong>在 1 周的高强度 Hackathon 周期内，主导产品核心架构设计与功能边界裁剪。统筹基于 OpenClaw 的自动化 Agent 工作流的快速落地。</li>
+        <li><strong>产品体验闭环设计：</strong>设计了「沙箱动态拉取代码 → 报错日志捕获 → 环境自动修复」的完整体验闭环 (Auto-debugging)。将复杂的技术逻辑封装为极简的用户交付物（代码执行指南或精准修复报告），大幅降低用户使用门槛。</li>
+      </ul>
+    </section>
 
-        <h2 class="section-label">产品与项目 <span>Experience</span></h2>
+    <section class="job">
+      <p class="job-head">早期产品探索与商业实践 (Early Ventures)</p>
+      <p class="job-sub">大一阶段</p>
+      <ul>
+        <li><strong>AI 产品原型设计：</strong>具备极强的技术趋势嗅觉，独立设计并开发了多个基于生成式 AI 的早期产品原型。熟练通过 Prompt Engineering 与 API 调用，将非结构化创意快速落地为可交互的技术 Demo。</li>
+        <li><strong>商业敏锐度与市场实践：</strong>洞察校园二手市场的供需信息差，建立线下校园商品流转渠道。成功跑通「低买高卖」的 C2C 商业模型并实现持续盈利，积累了扎实的业务网感与用户同理心。</li>
+      </ul>
+    </section>
 
-        <section class="exp">
-          <div class="exp-head">
-            <span class="exp-title">海外留子圈（校园 C2C 与社交平台）</span>
-            <span class="exp-period">2025.09 — 至今</span>
-          </div>
-          <div class="exp-role">创始人 &amp; 产品经理</div>
-          <ul class="exp-list">
-            <li><strong>需求洞察与产品规划：</strong>深度调研留学生群体，精准定位二手交易与校友社交的痛点需求。确立「极简、克制」的核心体验原则，规划产品 Roadmap，历时三个月完成微信小程序 MVP 版本的原型设计与上线。</li>
-            <li><strong>敏捷项目与团队管理：</strong>搭建并带领 10 余人的跨职能团队（覆盖研发、设计、运营）。作为项目枢纽，负责拆解业务需求，统筹前端与后端开发进度，保障产品高质量按时交付。</li>
-            <li><strong>产品架构与合规设计：</strong>主导搭建包含内容合规审查与风控管理的产品底层机制，确保 UGC 社区的健康运转。</li>
-            <li><strong>冷启动与用户增长：</strong>制定并执行早期冷启动推广运营策略，成功跑通产品核心业务流程，实现从 0 到 1 的破局，目前累计斩获数千 MAU（月活跃用户）。</li>
-          </ul>
-        </section>
+    <h2>教育背景 (Education)</h2>
+    <div class="edu-block">
+      <p class="edu-title">曼彻斯特大学 (The University of Manchester)</p>
+      <p class="edu-line">理学学士，计算机科学 (BSc Computer Science) &nbsp;|&nbsp; 大二在读 &nbsp;|&nbsp; 2024.09 — 2027.06</p>
+      <p><strong>核心技术底座：</strong>数据结构与算法、系统架构、分布式数据库、机器学习、基于知识的 AI (Knowledge-based AI)、软件工程、数据科学、金融学导论。</p>
+      <p><strong>预科成绩：</strong>INTO Manchester 预科，数学/高数/物理均为 <strong>A*</strong>；雅思 <strong>7.0</strong>（口语 <strong>8.0</strong>）。</p>
+    </div>
 
-        <section class="exp">
-          <div class="exp-head">
-            <span class="exp-title">ReproShip（AI Agent Hackathon 项目）</span>
-            <span class="exp-period">2026.03</span>
-          </div>
-          <div class="exp-role">产品负责人</div>
-          <ul class="exp-list">
-            <li><strong>痛点分析与愿景定义：</strong>针对 AI 研究者在复现代码时陷入「环境依赖地狱」的核心痛点，提出 <em>Stop configuring. Start building</em> 的产品愿景，明确目标用户画像。</li>
-            <li><strong>极速交付与可用性验证：</strong>在 1 周的高强度 Hackathon 周期内，主导产品核心架构设计与功能边界裁剪。统筹基于 OpenClaw 的自动化 Agent 工作流的快速落地。</li>
-            <li><strong>产品体验闭环设计：</strong>设计了「沙箱动态拉取代码 → 报错日志捕获 → 环境自动修复」的完整体验闭环 (Auto-debugging)。将复杂的技术逻辑封装为极简的用户交付物（代码执行指南或精准修复报告），大幅降低用户使用门槛。</li>
-          </ul>
-        </section>
+    <h2>技能与工具 (Skills &amp; Tools)</h2>
+    <div class="skills">
+      <p><strong>产品与数据：</strong>PRD 撰写，竞品分析，敏捷项目管理，Prompt Engineering</p>
+      <p><strong>前端与客户端：</strong>JavaScript，TypeScript，HTML/CSS，微信小程序全栈开发</p>
+      <p><strong>后端与数据库：</strong>Python，Java，SQL</p>
+    </div>
 
-        <section class="exp">
-          <div class="exp-head">
-            <span class="exp-title">早期产品探索与商业实践（Early Ventures）</span>
-            <span class="exp-period">大一阶段</span>
-          </div>
-          <div class="exp-role">独立产品原型 · 校园市场</div>
-          <ul class="exp-list">
-            <li><strong>AI 产品原型设计：</strong>具备极强的技术趋势嗅觉，独立设计并开发了多个基于生成式 AI 的早期产品原型。熟练通过 Prompt Engineering 与 API 调用，将非结构化创意快速落地为可交互的技术 Demo。</li>
-            <li><strong>商业敏锐度与市场实践：</strong>洞察校园二手市场的供需信息差，建立线下校园商品流转渠道。成功跑通「低买高卖」的 C2C 商业模型并实现持续盈利，积累了扎实的业务网感与用户同理心。</li>
-          </ul>
-        </section>
-
-        <div class="spacer"></div>
-
-        <h2 class="section-label">教育 <span>Education</span></h2>
-        <div class="edu-block">
-          <div class="edu-head">
-            <span class="edu-school">曼彻斯特大学 <span class="edu-meta" style="font-weight:400">(The University of Manchester)</span></span>
-            <span class="edu-meta">大二在读</span>
-          </div>
-          <p class="edu-meta" style="margin-bottom:0.35rem">
-            理学学士，计算机科学 (BSc Computer Science) · 2024.09 — 2027.06
-          </p>
-          <p>
-            <strong>核心技术底座：</strong>数据结构与算法、系统架构、分布式数据库、机器学习、基于知识的 AI (Knowledge-based AI)。
-          </p>
-          <p>
-            <strong>预科成绩：</strong>INTO Manchester 预科，数学/高数/物理均为 <strong>A*</strong>；雅思 <strong>7.0</strong>（口语 <strong>8.0</strong>）。
-          </p>
-        </div>
-
-        <p class="screen-hint">打印为 PDF：<kbd>Ctrl</kbd> + <kbd>P</kbd> → 选择「另存为 PDF」。内容较多时可将缩放调至 <strong>90%</strong> 或边距选「最小」以适配一页 A4。</p>
-      </div>
-    </article>
-  </div>
+    <p class="screen-hint">导出 PDF：<kbd>Ctrl</kbd> + <kbd>P</kbd> →「另存为 PDF」。若预览变成 2 页，可将「缩放」调至 96%～98%。</p>
+  </article>
 </body>
 </html>
