@@ -1,0 +1,129 @@
+% !TEX program = xelatex
+% 编译两次：xelatex cv.tex && xelatex cv.tex
+% Windows 推荐 fontset=windows（微软雅黑）；Overleaf 可改为 fontset=fandol
+\documentclass[11pt,a4paper,scheme=plain,fontset=windows]{ctexart}
+
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{tabularx}
+
+\geometry{
+  a4paper,
+  left=18mm,
+  right=18mm,
+  top=16mm,
+  bottom=16mm,
+}
+
+% —— 配色：克制、偏「成熟商务」——
+\definecolor{Accent}{HTML}{1a2f4a}
+\definecolor{Subdued}{HTML}{5c6570}
+\definecolor{RuleLine}{HTML}{c5cdd6}
+\definecolor{LinkCol}{HTML}{2c5282}
+
+\setstretch{1.18}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.35em}
+
+% 西文标题与英文副标用无衬线（与中文协调）
+\usepackage{fontspec}
+\setsansfont{Arial}[Scale=0.92]
+\newcommand{\texten}[1]{{\sffamily #1}}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=LinkCol,
+  urlcolor=LinkCol,
+  pdfauthor={Zeep Jia},
+  pdftitle={贾泽澎 - 简历},
+}
+
+\newcommand{\cvsection}[2]{%
+  \vspace{0.65em}%
+  {\color{Accent}\Large\bfseries #1}%
+  \hfill{\normalsize\color{Subdued}\texten{#2}}\\[-0.15em]
+  {\color{RuleLine}\rule{\linewidth}{0.75pt}}%
+  \vspace{0.4em}%
+}
+
+\newcommand{\jobtitle}[1]{{\large\bfseries\color{Accent}#1}\par\vspace{0.15em}}
+\newcommand{\jobmeta}[2]{%
+  \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textcolor{Subdued}{\normalsize #1} & \textcolor{Subdued}{\normalsize #2}
+  \end{tabular*}\par\vspace{0.25em}}
+\newcommand{\jobmetaone}[1]{\textcolor{Subdued}{\normalsize #1}\par\vspace{0.25em}}
+
+\begin{document}
+\thispagestyle{empty}
+\pagestyle{empty}
+
+% —— 页眉：姓名 + 细装饰线 ——
+{\fontsize{24}{28}\selectfont\bfseries\color{Accent} 贾泽澎}
+{\fontsize{13}{16}\selectfont\color{Subdued}\texten{ \quad Zeep Jia}}
+
+\vspace{0.25em}
+{\color{Accent}\rule{42mm}{1.2pt}}
+
+\vspace{0.55em}
+{\small\color{Subdued}%
+电话：15899892439 \quad\textbar\quad
+微信：Jzp15899892439 \quad\textbar\quad
+邮箱：\href{mailto:15899892439@163.com}{15899892439@163.com}
+\quad\textbar\quad
+GitHub：\href{https://github.com/MOLIYUANQUAN}{github.com/MOLIYUANQUAN}
+\quad\textbar\quad
+所在地：深圳 / 曼彻斯特
+}
+
+% ========== 教育 ==========
+\cvsection{教育背景}{Education}
+
+{\bfseries\color{Accent}曼彻斯特大学 (The University of Manchester)}
+
+理学学士，计算机科学 (BSc Computer Science) \quad\textbar\quad 大二在读 \quad\textbar\quad 2024.09 — 2027.06
+
+\vspace{0.15em}
+\textbf{核心技术底座：}数据结构与算法、系统架构、分布式数据库、机器学习、基于知识的 AI (Knowledge-based AI)、软件工程、数据科学、金融学导论。
+
+% ========== 经历 ==========
+\cvsection{产品与项目经历}{Experience}
+
+\jobtitle{海外留子圈（校园 C2C 与社交平台）}
+\jobmeta{创始人 \& 产品经理}{2025.09 — 至今}
+\begin{itemize}[leftmargin=1.15em, itemsep=0.22em, parsep=0pt, topsep=0.1em]
+  \item \textbf{需求洞察与产品规划：}深度调研留学生群体，精准定位二手交易与校友社交的痛点需求。确立「极简、克制」的核心体验原则，规划产品 Roadmap，历时三个月完成微信小程序 MVP 版本的原型设计与上线。
+  \item \textbf{敏捷项目与团队管理：}搭建并带领 10 余人的跨职能团队（覆盖研发、设计、运营）。作为项目枢纽，负责拆解业务需求，统筹前端与后端开发进度，保障产品高质量按时交付。
+  \item \textbf{产品架构与合规设计：}主导搭建包含内容合规审查与风控管理的产品底层机制，确保 UGC 社区的健康运转。
+  \item \textbf{冷启动与用户增长：}制定并执行早期冷启动推广运营策略，成功跑通产品核心业务流程，实现从 0 到 1 的破局，目前累计斩获数千 MAU（月活跃用户）。
+\end{itemize}
+
+\jobtitle{ReproShip（AI Agent Hackathon 项目）}
+\jobmeta{产品负责人}{2026.03}
+\begin{itemize}[leftmargin=1.15em, itemsep=0.22em, parsep=0pt, topsep=0.1em]
+  \item \textbf{痛点分析与愿景定义：}针对 AI 研究者在复现代码时陷入「环境依赖地狱」的核心痛点，提出 \textit{Stop configuring. Start building} 的产品愿景，明确目标用户画像。
+  \item \textbf{极速交付与可用性验证：}在 1 周的高强度 Hackathon 周期内，主导产品核心架构设计与功能边界裁剪。统筹基于 OpenClaw 的自动化 Agent 工作流的快速落地。
+  \item \textbf{产品体验闭环设计：}设计了「沙箱动态拉取代码 $\rightarrow$ 报错日志捕获 $\rightarrow$ 环境自动修复」的完整体验闭环 (Auto-debugging)。将复杂的技术逻辑封装为极简的用户交付物（代码执行指南或精准修复报告），大幅降低用户使用门槛。
+\end{itemize}
+
+\jobtitle{早期产品探索与商业实践 (Early Ventures)}
+\jobmetaone{大一阶段 · 课程项目与个人原型}
+\begin{itemize}[leftmargin=1.15em, itemsep=0.22em, parsep=0pt, topsep=0.1em]
+  \item \textbf{Savourly（First Year Team Project）：}学校组织的大一学年团队项目；与队友协作打造 \textbf{Savourly}，面向曼彻斯特本地场景，聚合、整理可核验的优质餐饮信息与「好吃」推荐。\textbf{担任主力开发}，在网站侧\textbf{独立完成从搭建、核心功能实现到部署上线}的主体工程与交付闭环。
+  \item \textbf{AIHub（Expo / React Native MVP）：}基于 \textbf{Expo SDK 52、React Native 0.76、React 18}，使用 \textbf{React Navigation} 底部 Tab 与 \textbf{Context} 管理状态；首页提供 \textbf{ChatGPT / Claude / DeepSeek} 等多模型切换与对话界面，并支持系统深浅色主题。可在 \textbf{Expo Go} 中预览；对话链路以 \textbf{MVP 占位与模拟回复} 为主，真实多模型 API 全链路整合与工程化\textbf{未完整收尾}。
+  \item \textbf{Arcflow（Web 原型）：}与 AIHub \textbf{同一产品设想}在 Web 侧的延续：前端 \textbf{React + Vite + React Router + Tailwind CSS}，\textbf{Axios} 调用自建 \textbf{Node.js (Express)} 后端；后端代理 \textbf{OpenAI Chat}（多模型白名单、token 上限等）。当前仓库为 \textbf{浏览器端 Web}，与 AIHub 的 Expo 移动端形态互补。
+\end{itemize}
+
+% ========== 技能 ==========
+\cvsection{技能与工具}{Skills}
+
+\begin{itemize}[leftmargin=1.15em, itemsep=0.18em, parsep=0pt, topsep=0.05em, label={}]
+  \item \textbf{AI 提效与工程：}精通 Cursor、Claude Code 等 AI 编程工具，具备 AI Agent 工作流搭建与 Prompt Engineering 实战经验，实现极速 MVP 验证。
+  \item \textbf{产品与数据：}PRD 撰写，竞品分析，敏捷项目管理，Prompt Engineering
+  \item \textbf{前端与客户端：}JavaScript，TypeScript，HTML/CSS，微信小程序全栈开发
+  \item \textbf{后端与数据库：}Python，Java，SQL
+\end{itemize}
+
+\end{document}

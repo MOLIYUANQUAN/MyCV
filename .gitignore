@@ -1,0 +1,11 @@
+# LaTeX 编译中间文件（保留 cv.tex / 可选 cv.pdf）
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.xdv
