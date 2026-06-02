@@ -6,7 +6,7 @@
 \documentclass[a4paper,10pt]{article}
 
 \usepackage[UTF8]{ctex}
-\usepackage[left=0.55in,right=0.55in,top=0.42in,bottom=0.42in]{geometry}
+\usepackage[left=0.55in,right=0.55in,top=0.36in,bottom=0.36in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -40,10 +40,10 @@
   {}
   [\vspace{-0.5em}\textcolor{primary}{\rule{\linewidth}{1pt}}]
 
-\titlespacing*{\section}{0pt}{0.58em}{0.36em}
+\titlespacing*{\section}{0pt}{0.45em}{0.25em}
 
 % 列表样式
-\setlist[itemize]{leftmargin=1.18em, itemsep=0.08em, parsep=0pt, topsep=2pt}
+\setlist[itemize]{leftmargin=1.14em, itemsep=0pt, parsep=0pt, topsep=1pt}
 
 % 自定义命令
 \newcommand{\entry}[4]{
@@ -57,15 +57,15 @@
 }
 
 \begin{document}
-\fontsize{10.85}{12.35}\selectfont
+\fontsize{10.35}{11.65}\selectfont
 
 %==== 头部信息 ====%
 {\Huge\bfseries\color{primary} 贾泽澎 \,|\, Zeep Jia}
 
-\vspace{0.22em}
+\vspace{0.16em}
 {\large\color{secondary} 求职意向：产品经理实习 / AI 产品实习}
 
-\vspace{0.35em}
+\vspace{0.25em}
 {\small
 \faPhone\ 158-9989-2439 \quad
 \faWeixin\ Jzp15899892439 \quad
@@ -86,7 +86,7 @@
 \entry{曼彻斯特大学 The University of Manchester}{2024.09 -- 2027.06}{BSc Computer Science 理学学士，计算机科学}{大二在读}
 
 \vspace{0.2em}
-\small\textbf{核心课程：}数据结构与算法、软件工程、数据库系统、分布式系统、机器学习、基于知识的 AI、数据科学、系统架构
+\textbf{核心课程：}数据结构与算法、面向对象编程、软件工程、数据库系统、分布式系统、计算机系统、系统架构、机器学习、基于知识的 AI、数据科学、Web 应用开发
 
 %==== 产品与项目经历 ====%
 \section{产品与项目经历}
@@ -99,7 +99,7 @@
     \item 基于用户反馈持续优化产品体验，通过微信群与校园社群完成冷启动，积累近 \textbf{1000 名}真实用户
 \end{itemize}
 
-\vspace{0.3em}
+\vspace{0.18em}
 \projectentry{ReproShip｜论文代码复现 Agent}{2026.03}{产品负责人}
 \begin{itemize}
     \item 针对论文代码复现中的环境配置复杂、依赖冲突和报错排查成本高等问题，提出代码复现 Agent 产品方向
@@ -108,7 +108,7 @@
     \item 与工程成员对齐 Docker 沙箱、Agent 工作流、实时任务状态、日志分析与报告输出等能力边界，推进可演示原型落地
 \end{itemize}
 
-\vspace{0.3em}
+\vspace{0.18em}
 \projectentry{早期产品与技术原型探索}{2025 -- 2026}{产品探索 / 开发实践}
 \begin{itemize}
     \item \textbf{AIHub}：全栈独立开发多模型 AI 工作台移动端 MVP，基于 Expo / React Native 验证 ChatGPT、Claude、DeepSeek 等模型统一入口、提示词模板与 AI 使用教学流程
@@ -118,11 +118,9 @@
 
 %==== 技能与工具 ====%
 \section{技能与工具}
-{\small
-\textbf{产品能力：}需求分析、用户故事、PRD、MVP 定义、信息架构、竞品分析、用户反馈分析、版本规划、跨职能协作\\[0.3em]
-\textbf{增长运营：}冷启动、校园社群运营、用户转化、内容供给、微信群传播、增长数据分析\\[0.3em]
-\textbf{AI 工具：}ChatGPT、Claude、Cursor、Claude Code、Codex、AI Agent Workflow\\[0.3em]
-\textbf{技术理解：}Python、JavaScript/TypeScript、Java、SQL、React Native、微信小程序、Spring Boot、Node.js
-}
+{\color{primary}\textbf{产品能力：}}\hspace{0.15em}需求分析、用户故事、PRD、MVP 定义、信息架构、竞品分析、用户反馈分析、版本规划、跨职能协作\\[0.4em]
+{\color{primary}\textbf{增长运营：}}\hspace{0.15em}冷启动、校园社群运营、用户转化、内容供给、微信群传播、增长数据分析\\[0.4em]
+{\color{primary}\textbf{AI 工具：}}\hspace{0.15em}ChatGPT、Claude、Cursor、Claude Code、Codex、AI Agent Workflow\\[0.4em]
+{\color{primary}\textbf{技术理解：}}\hspace{0.15em}Python、JavaScript/TypeScript、Java、SQL、React Native、微信小程序、Spring Boot、Node.js
 
 \end{document}
