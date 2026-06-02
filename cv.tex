@@ -3,10 +3,10 @@
 % Author: Zeep Jia
 %-------------------------
 
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage[UTF8]{ctex}
-\usepackage[left=0.6in,right=0.6in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage[left=0.55in,right=0.55in,top=0.42in,bottom=0.42in]{geometry}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{hyperref}
@@ -40,10 +40,10 @@
   {}
   [\vspace{-0.5em}\textcolor{primary}{\rule{\linewidth}{1pt}}]
 
-\titlespacing*{\section}{0pt}{0.6em}{0.4em}
+\titlespacing*{\section}{0pt}{0.58em}{0.36em}
 
 % 列表样式
-\setlist[itemize]{leftmargin=1.2em, itemsep=0pt, parsep=0pt, topsep=2pt}
+\setlist[itemize]{leftmargin=1.18em, itemsep=0.08em, parsep=0pt, topsep=2pt}
 
 % 自定义命令
 \newcommand{\entry}[4]{
@@ -57,24 +57,23 @@
 }
 
 \begin{document}
+\fontsize{10.85}{12.35}\selectfont
 
 %==== 头部信息 ====%
-\begin{center}
-    {\Huge\bfseries\color{primary} 贾泽澎 \,|\, Zeep Jia}
-    
-    \vspace{0.3em}
-    {\large\color{secondary} 求职意向：产品经理实习 / AI 产品实习}
-    
-    \vspace{0.4em}
-    \small
-    \faPhone\ 158-9989-2439 \quad
-    \faWeixin\ Jzp15899892439 \quad
-    \faEnvelope\ \href{mailto:zepengjia611@gmail.com}{zepengjia611@gmail.com} \quad
-    \faGithub\ \href{https://github.com/MOLIYUANQUAN}{MOLIYUANQUAN}
-    
-    \vspace{0.1em}
-    \faMapMarker*\ 深圳 / 曼彻斯特
-\end{center}
+{\Huge\bfseries\color{primary} 贾泽澎 \,|\, Zeep Jia}
+
+\vspace{0.22em}
+{\large\color{secondary} 求职意向：产品经理实习 / AI 产品实习}
+
+\vspace{0.35em}
+{\small
+\faPhone\ 158-9989-2439 \quad
+\faWeixin\ Jzp15899892439 \quad
+\faEnvelope\ \href{mailto:zepengjia611@gmail.com}{zepengjia611@gmail.com} \quad
+\faGithub\ \href{https://github.com/MOLIYUANQUAN}{MOLIYUANQUAN}
+\quad
+\faMapMarker*\ 深圳 / 曼彻斯特
+}
 
 \vspace{-0.3em}
 
@@ -104,24 +103,26 @@
 \projectentry{ReproShip｜论文代码复现 Agent}{2026.03}{产品负责人}
 \begin{itemize}
     \item 针对论文代码复现中的环境配置复杂、依赖冲突和报错排查成本高等问题，提出代码复现 Agent 产品方向
-    \item 设计「拉取代码 → 沙箱运行 → 日志诊断 → 自动修复建议 → 复现报告」核心任务流，推进可演示原型落地
+    \item 设计「拉取代码 → 沙箱运行 → 日志诊断 → 自动修复建议 → 复现报告」核心任务流，明确用户输入、系统状态、异常处理与最终交付物
+    \item 主导前端 UI 与交互设计，将复杂的复现流程拆解为任务创建、沙箱运行、日志反馈、修复建议与报告输出等清晰页面状态，提升用户对 Agent 执行过程的可理解性
+    \item 与工程成员对齐 Docker 沙箱、Agent 工作流、实时任务状态、日志分析与报告输出等能力边界，推进可演示原型落地
 \end{itemize}
 
 \vspace{0.3em}
 \projectentry{早期产品与技术原型探索}{2025 -- 2026}{产品探索 / 开发实践}
 \begin{itemize}
-    \item \textbf{AIHub}：基于 Expo / React Native 搭建多模型 AI 工作台移动端 MVP，探索统一入口与提示词模板
-    \item \textbf{Arcflow}：AI 工作流工具，将写作、调研、开发等任务拆成清晰步骤，帮助用户跟着流程完成产出
-    \item \textbf{EventLite}：基于 Java Spring Boot 开发校园活动管理平台，参与后端接口与数据模型设计
+    \item \textbf{AIHub}：全栈独立开发多模型 AI 工作台移动端 MVP，基于 Expo / React Native 验证 ChatGPT、Claude、DeepSeek 等模型统一入口、提示词模板与 AI 使用教学流程
+    \item \textbf{Arcflow}：全栈独立开发 AI 工作流工具，将写作、调研、开发等复杂任务拆成步骤化流程，探索「从聊天到流程化产出」的 AI 产品交互形态
+    \item \textbf{EventLite}：大二团队项目，主导校园活动管理平台前端 UI 与交互设计，参与 Java Spring Boot 后端接口、数据模型、用户/活动管理等模块开发
 \end{itemize}
 
 %==== 技能与工具 ====%
 \section{技能与工具}
-\begin{tabularx}{\textwidth}{@{}l X@{}}
-\textbf{产品能力} & 需求分析、用户故事、PRD、MVP 定义、信息架构、竞品分析、用户反馈分析、版本规划、跨职能协作 \\[0.3em]
-\textbf{增长运营} & 冷启动、校园社群运营、用户转化、内容供给、微信群传播、增长数据分析 \\[0.3em]
-\textbf{AI 工具} & ChatGPT、Claude、Cursor、Claude Code、Codex、AI Agent Workflow \\[0.3em]
-\textbf{技术理解} & Python、JavaScript/TypeScript、Java、SQL、React Native、微信小程序、Spring Boot、Node.js \\
-\end{tabularx}
+{\small
+\textbf{产品能力：}需求分析、用户故事、PRD、MVP 定义、信息架构、竞品分析、用户反馈分析、版本规划、跨职能协作\\[0.3em]
+\textbf{增长运营：}冷启动、校园社群运营、用户转化、内容供给、微信群传播、增长数据分析\\[0.3em]
+\textbf{AI 工具：}ChatGPT、Claude、Cursor、Claude Code、Codex、AI Agent Workflow\\[0.3em]
+\textbf{技术理解：}Python、JavaScript/TypeScript、Java、SQL、React Native、微信小程序、Spring Boot、Node.js
+}
 
 \end{document}
